@@ -36,7 +36,7 @@
           <h3 class="welcomeText">
             Olá, meu nome é
             <span class="usernameText">Gabriel Alexandre</span>
-            e eu sou <span id="jobText" class="emphasisText">Desenvolvedor Front-end</span>
+            e eu sou <span id="jobText" class="emphasisText">Test - 01</span>
           </h3>
   
           <img 
@@ -191,10 +191,12 @@
   </div>
 
   <script>
-    const  getJobText = document.querySelector("#jobText");
+    const getJobText = document.querySelector("#jobText");
+    const jobsArray = ["Desenvolvedor Front-end", "Engenheiro de Software"];
+    let currentJob = 0;
 
     function typeWrite(element) {
-      const textArray = element.innerHTML.split("");
+      const textArray = jobsArray[currentJob].split("");
       element.innerHTML = '';
 
       textArray.forEach((letter, index) => {
@@ -202,8 +204,19 @@
           element.innerHTML += letter;
         }, 75 * index);
       })
-    }
 
+      // Após terminar de escrever a primeira mensagem, avança para a próxima (se houver)
+      setTimeout(function() {
+        currentJob++;
+
+        if(currentJob >= jobsArray.length) {
+          currentJob = 0; // Reinicia para o início da array
+        }
+        
+        typeWrite(element);
+      }, 150 * textArray.length);
+    }
+    
     typeWrite(getJobText);
   </script>  
 </body>

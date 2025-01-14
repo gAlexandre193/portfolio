@@ -1,0 +1,24 @@
+.sectionTopicsContainer .topicTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: max-content;
+  position: relative;
+}
+.sectionTopicsContainer .topicTitle::before {
+  content: '';
+  background-color: #703CFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+  border-radius: 12px;
+  height: 4px;
+  width: 75%;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.sectionTopicsContainer .childrenTopicsContainer { margin-top: 6px; }

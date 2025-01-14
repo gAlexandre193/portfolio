@@ -1,0 +1,60 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 0 16px;
+  min-height: 100vh;
+  max-width: 780px;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.welcomeContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40px);
+}
+.welcomeContainer .welcomeText { 
+  font-size: 15px; 
+  font-weight: 400;
+  width: 268px;
+}
+.welcomeContainer .usernameText {
+  font-size: 24px;
+  font-weight: 500;
+  display: -webkit-box;
+}
+.welcomeContainer .emphasisText {
+  color: #703CFF;
+  font-weight: 500;
+}
+
+.aboutMeContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.aboutMeContainer .descriptionText { line-height: 26px; }
+.aboutMeContainer .descriptionText > .emphasisText { color: #703CFF; }
+
+.skillsContainer {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.projectsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .welcomeContainer { flex-direction: column; }
+  .aboutMeContainer { flex-direction: column-reverse; }
+}

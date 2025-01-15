@@ -5,9 +5,11 @@ import workInProgressImg from '../imgs/workInProgress.png';
 import Header from './header';
 import SectionTopics from './sectionTopics';
 import SkillCard from '../components/skilCard';
+import getTypingString from '../function/typingEffect';
 import styles from '../styles/layout.module.css';
 
 export default function Layout() {
+  const textArray = ['Engenheiro de Software', 'Desenvolvedor Front-end']
   const [skillList] = useState([
     {skillIllustrationURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4zBDLADQ8jgT9pWcucvZjsyPoWme7A-auA&s', skillTitle: 'HTML', skillCourse: 'SoloLearn',},
     {skillIllustrationURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4zBDLADQ8jgT9pWcucvZjsyPoWme7A-auA&s', skillTitle: 'CSS', skillCourse: 'SoloLearn',},
@@ -26,7 +28,7 @@ export default function Layout() {
           <h3 className={styles.welcomeText}>
             Olá, meu nome é
             <span className={styles.usernameText}>Gabriel Alexandre</span>
-            e eu sou <span className={styles.emphasisText}>Engenheiro de Software</span>
+            e eu sou <span className={styles.emphasisText}> {getTypingString(textArray)} </span>
           </h3>
 
           <img

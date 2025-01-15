@@ -22,28 +22,3 @@ body {
     87.54%, rgba(99, 173, 242, 0.25) 93.54%);
   color: #323232; 
 }
-
-/*
-.sectionContainer::-webkit-scrollbar { width: 8px; }
-.sectionContainer::-webkit-scrollbar-thumb {
-  background-color: #6e6ea9;
-  border-radius: 50px;
-}
-
-.projectsContainer { display: flex; }
-
-.projectsContainer .workingInProgressImage {
-  margin: auto;
-  width: 196px;
-}
-
-@media (max-width: 680px) {
-  .sectionContainer { padding-top: 26px; }
-
-  .intContainer .welcomeContainer { 
-    flex-direction: column; 
-    gap: 18px;
-  }
-
-  .aboutContainer { flex-direction: column-reverse; }
-} */

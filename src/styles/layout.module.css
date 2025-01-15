@@ -22,7 +22,7 @@
 .welcomeContainer .welcomeText { 
   font-size: 15px; 
   font-weight: 400;
-  width: 268px;
+  width: 270px;
 }
 .welcomeContainer .usernameText {
   font-size: 24px;
@@ -32,6 +32,11 @@
 .welcomeContainer .emphasisText {
   color: #703CFF;
   font-weight: 500;
+}
+.welcomeContainer .emphasisText::after {
+  content: "|";
+  opacity: 1;
+  animation: typeWriteEffect .7s infinite;
 }
 
 .aboutMeContainer {
@@ -52,6 +57,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes typeWriteEffect {
+  0%, 100% { opacity: 1; }
+
+  50% { opacity: 0; }
 }
 
 @media (max-width: 640px) {

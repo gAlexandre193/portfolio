@@ -1,6 +1,27 @@
 .headerContainer {
+  background-color: rgba(255, 255, 255, .25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .15);
+  border-radius: 0 0 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px;
+  opacity: 1;
+  width: 100%;
+  max-width: 780px;
+
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: .25s;
+}
+
+.headerIsActive {
+  opacity: 1;
+  top: 0;
 }

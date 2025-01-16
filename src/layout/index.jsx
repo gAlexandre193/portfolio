@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { BsMouse } from 'react-icons/bs';
 import alexProfileCartoonImg from '../imgs/cartoonImage.png';
 import alexProfileImg from '../imgs/profileImage.png';
 import workInProgressImg from '../imgs/workInProgress.png';
@@ -18,6 +19,16 @@ export default function Layout() {
     {skillIllustrationURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAACUCAMAAABY+0dBAAAAnFBMVEX///8AAAC+MvX7+/t8fHyioqKvr69kZGTMzMw6Ojq7H/XNc/e9LfXTh/i8KfXe3t79+/+3APT57/7o6OiRkZHu7u7z4f3RfvjYlvnnwfv15/22tracnJwMDAzS0tK8vLzhrvr79P7JYfbBQfXkuvvEUPbbnfnqx/zdpfpsbGxPT08rKyuJiYlCQkJbW1vLavft0vzWj/nHWfYdHR1LormKAAAEpklEQVR4nO2c21bqMBBADy0ghtASSik3uZU7Kqj//2+n6HiO0EmDQBsaZj/5wLgm2+lkki7884e4FeqtVl13DrdAd8n4qKs7C+2MpxPGOdtOx7oz0csisJgVwaxgpzsXjYyDkHHrE87C2t12ilHogIZPFU441Z2RFnYz8UPDV1W8t3RnlTmtmnCsGI54u6/9ozuyRFzDHhFOG7qzy4zxYnv8VPwsiuriTrrmruYwmYavrfTtHrbSRnvGpOXw3TRnc+Pnq+mMI00y9nzwWUd3pqnSCFXV8KMqzO0U4zdsy5RWhZibqaIxDSVbpoxoKzWvVdQXVfmWKS0KFix0J35ldm9W4pYpg1ltk6buxjJ2rjgVLt6XxjwfnYnziyZ5jMMnZjwfjeolGj5VOEH+i6LeVm6Z3HFUzw0Ty7xvpYFqy3ScsDMKleOm2OpeyYXUkjeLaIBsR2XfqKlGTlbVvZILSRbBeA0OmrtAcSQ1WQQX1cW/LtjoTJK2WJNFCGd6cC/XHTH5h80V4Yha7HqyFUi3GFNFRE0SvYXayZqmmSI4C0eygGWIThUmiti/1Eq4qe4GISLPQBGMVxVnh06Vx6NME8HZRH3bMh69H7cK00QwvjzpVVZrfjRfmSWCi6B74uGp3jq80TJJBBf8Vy9uFkyYKCI6Xy5/Gzz/f0A3RgSzgjPec3eD76tOQ0Q4TLVlyphumWOMiIsuYOHi1wQRzJpfdCW/a0fzVf5FCFHdXXjfWF9sRe5FBKJzhWvX8VRMLv8tWrnaK4nRtX4RQRAEQRAEQRAEQRAEcV+4lRjeWVFu+rmmyvPm8YhNTxlkl2NRj8UMkk2TYiFGWRlkl+JRDxkkmyYkAiARAIkASARAIgASAZAIgEQAJAIgEQCJAEgEQCIAEgGQCIBEACQCIBEAiQBIBEAiABIBkAiARAAkAiARAIkASARAIgASAZAIgEQAJAIgEQCJAEgEQCIAEgGQCIBEACQCIBEAiQBIBEAiABIBkAgAEVGyVUF2Mx61yiLbFEFENJUifCwqi2xTBFnSylcFeet4VD+LbFMEKfKN8ntqbjzohM5y2yBtr1BRBQ3PCbpxsDU9K5qEvUKC8v51R6zKC4om4WMx2aSbItiiFI0PabAGiPjAVpX4ZWC0iPI+T0n+vEnTkf+CRZQySzgtetiyktb1jAYMsss4JdBCLzxJx4L+E/b5jXIIu3l8ZErcm8Brwm6iHgpF5Vh++5TRlUVrQ/7I3qvkw3kfp/YMJGuLpuZDFbbfl31ynfdxao+Pd789m7LrQc37notN44D65J4HKugoAbw2y8OI8jPeSr54yf+esQe7Xfgd6huMfFB5vMyDER3iE3mXOIWPvF9F/Me+qCRedad/Rbykfqlgozv5q4Ldz5zGxwn/tipP4EeIE+rBhJnygP5ZT8fLUHfeV8cun9Ex18bVQ4RdQW9ckngwrD9848vOlhJMGSgRZEdyFEPL4Qt7tTlJwtMm/5eUCgZFdat4WjfzfzWnZtB/SNxKH4slo5+KH3jDvuwRWRdLFXN7JII3GJaKrwc2XlbNXsW9h2fiCNv3Pdd1K8NerzeIfvD8uyqFW+UvlrdUP6PQnfMAAAAASUVORK5CYII=', skillTitle: 'Next', skillCourse: 'Udemy',},
     {skillIllustrationURL: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAACUCAMAAABY+0dBAAAAnFBMVEX///8AAAC+MvX7+/t8fHyioqKvr69kZGTMzMw6Ojq7H/XNc/e9LfXTh/i8KfXe3t79+/+3APT57/7o6OiRkZHu7u7z4f3RfvjYlvnnwfv15/22tracnJwMDAzS0tK8vLzhrvr79P7JYfbBQfXkuvvEUPbbnfnqx/zdpfpsbGxPT08rKyuJiYlCQkJbW1vLavft0vzWj/nHWfYdHR1LormKAAAEpklEQVR4nO2c21bqMBBADy0ghtASSik3uZU7Kqj//2+n6HiO0EmDQBsaZj/5wLgm2+lkki7884e4FeqtVl13DrdAd8n4qKs7C+2MpxPGOdtOx7oz0csisJgVwaxgpzsXjYyDkHHrE87C2t12ilHogIZPFU441Z2RFnYz8UPDV1W8t3RnlTmtmnCsGI54u6/9ozuyRFzDHhFOG7qzy4zxYnv8VPwsiuriTrrmruYwmYavrfTtHrbSRnvGpOXw3TRnc+Pnq+mMI00y9nzwWUd3pqnSCFXV8KMqzO0U4zdsy5RWhZibqaIxDSVbpoxoKzWvVdQXVfmWKS0KFix0J35ldm9W4pYpg1ltk6buxjJ2rjgVLt6XxjwfnYnziyZ5jMMnZjwfjeolGj5VOEH+i6LeVm6Z3HFUzw0Ty7xvpYFqy3ScsDMKleOm2OpeyYXUkjeLaIBsR2XfqKlGTlbVvZILSRbBeA0OmrtAcSQ1WQQX1cW/LtjoTJK2WJNFCGd6cC/XHTH5h80V4Yha7HqyFUi3GFNFRE0SvYXayZqmmSI4C0eygGWIThUmiti/1Eq4qe4GISLPQBGMVxVnh06Vx6NME8HZRH3bMh69H7cK00QwvjzpVVZrfjRfmSWCi6B74uGp3jq80TJJBBf8Vy9uFkyYKCI6Xy5/Gzz/f0A3RgSzgjPec3eD76tOQ0Q4TLVlyphumWOMiIsuYOHi1wQRzJpfdCW/a0fzVf5FCFHdXXjfWF9sRe5FBKJzhWvX8VRMLv8tWrnaK4nRtX4RQRAEQRAEQRAEQRAEcV+4lRjeWVFu+rmmyvPm8YhNTxlkl2NRj8UMkk2TYiFGWRlkl+JRDxkkmyYkAiARAIkASARAIgASAZAIgEQAJAIgEQCJAEgEQCIAEgGQCIBEACQCIBEAiQBIBEAiABIBkAiARAAkAiARAIkASARAIgASAZAIgEQAJAIgEQCJAEgEQCIAEgGQCIBEACQCIBEAiQBIBEAiABIBkAgAEVGyVUF2Mx61yiLbFEFENJUifCwqi2xTBFnSylcFeet4VD+LbFMEKfKN8ntqbjzohM5y2yBtr1BRBQ3PCbpxsDU9K5qEvUKC8v51R6zKC4om4WMx2aSbItiiFI0PabAGiPjAVpX4ZWC0iPI+T0n+vEnTkf+CRZQySzgtetiyktb1jAYMsss4JdBCLzxJx4L+E/b5jXIIu3l8ZErcm8Brwm6iHgpF5Vh++5TRlUVrQ/7I3qvkw3kfp/YMJGuLpuZDFbbfl31ynfdxao+Pd789m7LrQc37notN44D65J4HKugoAbw2y8OI8jPeSr54yf+esQe7Xfgd6huMfFB5vMyDER3iE3mXOIWPvF9F/Me+qCRedad/Rbykfqlgozv5q4Ldz5zGxwn/tipP4EeIE+rBhJnygP5ZT8fLUHfeV8cun9Ex18bVQ4RdQW9ckngwrD9848vOlhJMGSgRZEdyFEPL4Qt7tTlJwtMm/5eUCgZFdat4WjfzfzWnZtB/SNxKH4slo5+KH3jDvuwRWRdLFXN7JII3GJaKrwc2XlbNXsW9h2fiCNv3Pdd1K8NerzeIfvD8uyqFW+UvlrdUP6PQnfMAAAAASUVORK5CYII=', skillTitle: 'React Native', skillCourse: 'Udemy',},
   ]);
+  const [showScrollDown, setShowScrollDown] = useState(true);
+
+  // Mouse Scroll Down Effect
+  useEffect(() => {
+    const handleScroll = () => setShowScrollDown(window.scrollY <= 100);
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [])
 
   return (
     <div className={styles.wrapper}>
@@ -35,6 +46,12 @@ export default function Layout() {
             src={alexProfileCartoonImg}
             alt='Alex Profile Cartoon'
           />
+
+          <div className={`${styles.scrollDownContainer} ${!showScrollDown ? styles.scrollDownIsHidde : ''}`}>
+            <BsMouse className={styles.scrollDownIcon} />
+
+            <span> Abaixe </span>
+          </div>
         </div>
 
         <SectionTopics title='Sobre Mim' customClassName={styles.aboutMeContainer}>

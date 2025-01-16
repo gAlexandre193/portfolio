@@ -14,6 +14,7 @@
 }
 
 .welcomeContainer {
+  position: relative;
   display: flex;
   gap: 40px;
   justify-content: center;
@@ -39,6 +40,24 @@
   opacity: 1;
   animation: typeWriteEffect .7s infinite;
 }
+.welcomeContainer .scrollDownContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: .6;
+  position: absolute;
+  bottom: 30px;
+  transform: scale(.7) translateY(-20px);
+  animation: arrowBouncingEffect .95s infinite;
+}
+.welcomeContainer .scrollDownIsHidde { animation: scrollDownIsHiddeEffect .95s forwards; }
+.scrollDownContainer .scrollDownIcon { 
+  font-size: 1.6rem; 
+  transform: rotate(180deg);
+}
+
 
 .aboutMeContainer {
   display: flex;
@@ -64,6 +83,28 @@
   0%, 100% { opacity: 1; }
 
   50% { opacity: 0; }
+}
+@keyframes arrowBouncingEffect {
+  0%, 100% { 
+    opacity: .6;
+    transform: scale(.7) translateY(-20px); 
+  }
+  
+  50% { 
+    opacity: 1;
+    transform: scale(1) translateY(0); 
+  }
+}
+@keyframes scrollDownIsHiddeEffect {
+  0% {
+    opacity: .6;
+    transform: scale(.7) translateY(-20px); 
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(0);
+  }
 }
 
 @media (max-width: 640px) {
